@@ -26,9 +26,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/chirps', [ChirpController::class, 'index'])->name('chirps.index');
 
-    Route::post('/chirps', function() {
-        return 'Processing chirp...';
-    });
+    Route::post('/chirps', [ChirpController::class, 'store'])->name('chirps.store');
 });
 
 require __DIR__.'/auth.php';
