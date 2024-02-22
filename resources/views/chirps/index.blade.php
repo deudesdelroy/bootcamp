@@ -45,7 +45,7 @@
                             </div>
                             <p class="mt-4 text-lg text-gray-900 dark:text-gray-100">{{ $chirp->message }}</p>
                         </div>
-                        @if(auth()->user()->is($chirp->user))
+                        @can('update', $chirp)
                             <x-dropdown>
                                 <x-slot name="trigger">
                                     <button>
@@ -58,9 +58,12 @@
                                     <x-dropdown-link :href="route('chirps.edit', $chirp)">
                                         {{ __('Edit chirp') }}
                                     </x-dropdown-link>
+                                    <x-dropdown-link :href="route('chirps.edit', $chirp)">
+                                        {{ __('Delete chirp') }}
+                                    </x-dropdown-link>
                                 </x-slot>
                             </x-dropdown>
-                        @endif
+                        @endcan
                     </div>
                 @endforeach
 
