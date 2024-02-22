@@ -58,6 +58,9 @@
                                     <x-dropdown-link :href="route('chirps.edit', $chirp)">
                                         {{ __('Edit chirp') }}
                                     </x-dropdown-link>
+                                    <x-dropdown-link :href="route('chirps.edit', $chirp)">
+                                        {{ __('Delete chirp') }}
+                                    </x-dropdown-link>
                                 </x-slot>
                             </x-dropdown>
                         @endcan
